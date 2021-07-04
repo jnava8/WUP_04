@@ -64,6 +64,7 @@ It seems that if you have a LT HIGH SCHOOL degree and HIGH SCHOOL degree the WOR
 ```{r}
 favstats(WORDSUM~DEGREE,data=gssdata)
 ```
+Some of the patterns that I see are; High School and LT High school have the lowest scores compared to having a Bachelor, Graduate or Junior College degree. Also, the max scores are similar with all degree types. The mean scores are higher and closer in range with having a Junior College, Graduate, and Bachelor degree. The mean scores for having a LT High School and High School degree are  less than 2 points different than if you had a Bachelor degree. 
 
 
 ## Inferential Results
