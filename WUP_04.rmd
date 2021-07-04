@@ -22,6 +22,12 @@ The data is in the file GSScsv.csv and came from the 2018 General Social Survey.
 $H_0$ There is no difference between the average score on the WORDSUM test and level of schooling DEGREE  
 $H_a$ There is a significant difference in average score on the WORDSUM test between at least two levels of DEGREE  
 
+```{r}
+gssdata=read_csv("GSScsv.csv")
+```
+
+
+
 # Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
@@ -30,15 +36,35 @@ $H_a$ There is a significant difference in average score on the WORDSUM test bet
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
+
+
+
 ## Descriptive Results
+
 
 ### Graphical Descriptive Results
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+```{r}
+basicCN <- ggplot(gssdata,aes(x=DEGREE,y=WORDSUM))
+```
+## Now add in boxplot
+
+```{r}
+basicCN + geom_boxplot()
+```
+
+It seems that if you have a LT HIGH SCHOOL degree and HIGH SCHOOL degree the WORDSUM test average scores are less than if you have a BACHELOR, GRADUATE, and JUNIOR COLLEGE degree. This leads me to believe that if you have less than a college degree the results would be different than if you have a high school degree. 
+
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+```{r}
+favstats(WORDSUM~DEGREE,data=gssdata)
+```
+
 
 ## Inferential Results
 
